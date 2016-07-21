@@ -77,7 +77,7 @@ def start_myapp2():
       'myapp2.supervisor.available')
 def run_workers():
     w = Workers()
-    w.start_tasks(['myapp1', 'myapp2'])
+    w.start_tasks()
 
 ```
 
