@@ -53,6 +53,8 @@ def run_workers():
 ```
 
 
+This layer is created in a way such that you may use it to control an arbitrary number of Supervisor managed applications. To support subsequent applications, just include the appropriately named template and WAALLLA!
+
 # emitters
 
 **supervisor.available** - This state is automatically emitted once Supervisor has been installed. Rely on this state to perform config rendering, and administrative ops when Supervisor is ready to be used.
