@@ -1,6 +1,3 @@
-#!/usr/bin/python3
-# Copyright (c) 2016, James Beedy <jamesbeedy@gmail.com>
-
 from charms.reactive import set_state
 from charms.reactive import when
 from charms.reactive import when_not
