@@ -4,6 +4,7 @@
 import os
 import subprocess as sp
 from charms.reactive import status_set
+from charmhelpers.core import host
 
 
 class Supervisor:
