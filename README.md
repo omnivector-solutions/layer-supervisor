@@ -26,14 +26,13 @@ Once your template is in place, you can follow the simple usage example to get t
 
 ```python
 
-from supervisorlib import Supervisor
+from charms.supervisorlib import render_supervisor_conf
 
 
 @when('myapp.installed')
 @when('supervisor.available')
 def start_myapp():
-    spvsr = Supervisor('myapp')
-    spvsr.render_supervisor_conf()
+    render_supervisor_conf()
 
 ```
 This layer will emit an `'<appname>.supervisor.available'` state specific to each app following the starting of the application specific supervisor process, you could then react to the `'<appname>.supervisor.available'` state from other layers, and throughout the rest of your layer or charm's lifecycle.
@@ -56,21 +55,19 @@ This layer is created in a way such that you may use it to control an arbitrary 
 Example
 ```python
 
-from supervisorlib import Supervisor
+from charms.supervisorlib import render_supervisor_conf
 
 
 @when('myapp1.installed')
 @when('supervisor.available')
 def start_myapp1():
-    spvsr = Supervisor('myapp1')
-    spvsr.render_supervisor_conf(ctxt=myapp1_ctxt)
+    render_supervisor_conf()
 
 
 @when('myapp2.installed')
 @when('supervisor.available')
 def start_myapp2():
-    spvsr = Supervisor('myapp2')
-    spvsr.render_supervisor_conf(ctxt=myapp2_ctxt)
+    render_supervisor_conf()
 
 
 @when('myapp1.supervisor.available',
