@@ -32,7 +32,7 @@ from charms.supervisor import render_supervisor_conf
 @when('myapp.installed')
 @when('supervisor.available')
 def start_myapp():
-    render_supervisor_conf()
+    render_supervisor_conf('myapp')
 
 ```
 This layer will emit an `'<appname>.supervisor.available'` state specific to each app following the starting of the application specific supervisor process, you could then react to the `'<appname>.supervisor.available'` state from other layers, and throughout the rest of your layer or charm's lifecycle.
@@ -40,6 +40,8 @@ This layer will emit an `'<appname>.supervisor.available'` state specific to eac
 For example:
 
 ```python
+import Workers
+
 
 @when('myapp.supervisor.available')
 def run_workers():
@@ -56,18 +58,19 @@ Example
 ```python
 
 from charms.supervisor import render_supervisor_conf
+import Workers
 
 
 @when('myapp1.installed')
 @when('supervisor.available')
 def start_myapp1():
-    render_supervisor_conf()
+    render_supervisor_conf('myapp1')
 
 
 @when('myapp2.installed')
 @when('supervisor.available')
 def start_myapp2():
-    render_supervisor_conf()
+    render_supervisor_conf('myapp2')
 
 
 @when('myapp1.supervisor.available',
