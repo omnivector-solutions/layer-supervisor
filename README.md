@@ -26,7 +26,7 @@ Once your template is in place, you can follow the simple usage example to get t
 
 ```python
 
-from charms import Supervisor
+from supervisorlib import Supervisor
 
 
 @when('apps.installed')
@@ -55,7 +55,6 @@ def run_workers():
 
 # emitters
 
-**supervisor.available** - This state is automatically emitted once Supervisor has been installed. Rely on this state to perform config rendering, and administrative ops when Supervisor
-is ready to be used.
+**supervisor.available** - This state is automatically emitted once Supervisor has been installed. Rely on this state to perform config rendering, and administrative ops when Supervisor is ready to be used.
 
 **<appname>.supervisor.available** - This state is emitted after the successfull rendering of an application supervisor config template, and starting of the supervisor <appname> process has completed.
