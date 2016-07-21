@@ -26,7 +26,7 @@ Once your template is in place, you can follow the simple usage example to get t
 
 ```python
 
-from charms.supervisorlib import render_supervisor_conf
+from charms.supervisor import render_supervisor_conf
 
 
 @when('myapp.installed')
@@ -55,7 +55,7 @@ This layer is created in a way such that you may use it to control an arbitrary 
 Example
 ```python
 
-from charms.supervisorlib import render_supervisor_conf
+from charms.supervisor import render_supervisor_conf
 
 
 @when('myapp1.installed')

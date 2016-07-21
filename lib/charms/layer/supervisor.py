@@ -37,9 +37,9 @@ def render_supervisor_conf(appname, ctxt={}):
         :param ctxt: dictionary of context variables to render in
                      the template
     """
-    spvsr_avail = "%s.supervisor.available" % self.appname
-    spvsr_conf = "/etc/supervisor/conf.d/%s.conf" % self.appname
-    spvsr_tmpl = "%s.spvsr.conf" % self.appname
+    spvsr_avail = "%s.supervisor.available" % appname
+    spvsr_conf = "/etc/supervisor/conf.d/%s.conf" % appname
+    spvsr_tmpl = "%s.spvsr.conf" % appname
     if os.path.exists(spvsr_conf):
         stop()
         os.remove(spvsr_conf)
