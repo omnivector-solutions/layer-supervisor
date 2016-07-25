@@ -82,7 +82,7 @@ def run_workers():
 ```
 
 
-# Emitters
+# States
 **supervisor.available** - This state is automatically emitted once Supervisor has been installed. Rely on this state to perform config rendering, and administrative ops when Supervisor is ready to be used.
 
 **\<appname\>.supervisor.available** - This state is emitted after the successfull rendering of an application supervisor config, and starting of the supervisor <appname> process has completed.
