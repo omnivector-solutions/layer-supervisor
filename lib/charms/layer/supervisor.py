@@ -53,7 +53,7 @@ def render_supervisor_conf(appname, ctxt={}):
     if not host.service_running("supervisor"):
         host.service_start("supervisor")
     # Reread supervisor .conf and start/restart process
-    reread()
-    update()
-    start()
+    reread(appname)
+    update(appname)
+    start(appname)
     set_state(spvsr_avail)
