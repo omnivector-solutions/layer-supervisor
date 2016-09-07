@@ -41,7 +41,7 @@ def render_supervisor_conf(appname, ctxt={}):
     spvsr_conf = "/etc/supervisor/conf.d/%s.conf" % appname
     spvsr_tmpl = "%s.spvsr.conf" % appname
     if os.path.exists(spvsr_conf):
-        stop()
+        stop(appname)
         os.remove(spvsr_conf)
     # Render supervisor conf
     render(source=spvsr_tmpl,
